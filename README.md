@@ -12,11 +12,15 @@
 - Mude as variáveis de caminho
 - Adapte o código com as demais colunas que precisar
 
->No terminal execute: .\interpretador .\scraping\scraping.py
+````console
+git clone https://github.com/1freelipe/scraping-xml.git
+cd scraping-xml
 
-```
-Configurações de caminho relativo
+Configurações de pasta
 
 PASTA_XML = r"C:\O\Seu\Caminho\Relativo"
 ARQUIVO_SAIDA = fr"C:\O\Seu\Caminho\Relativo\nome_do_arquivo_{yesterday}.csv"
-```
+````
+
+>No terminal execute: .\interpretador .\scraping\scraping.py
+
