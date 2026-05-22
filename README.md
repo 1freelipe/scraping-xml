@@ -14,9 +14,9 @@
 
 >No terminal execute: .\interpretador .\scraping\scraping.py
 
-````
-Configurações de pasta
+```
+Configurações de caminho relativo
 
 PASTA_XML = r"C:\O\Seu\Caminho\Relativo"
 ARQUIVO_SAIDA = fr"C:\O\Seu\Caminho\Relativo\nome_do_arquivo_{yesterday}.csv"
-````
+```
