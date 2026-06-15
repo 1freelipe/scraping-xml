@@ -3,8 +3,7 @@ import csv
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
-# Extraindo a data para usar como parâmetro no nome do arquivo
-yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+yesterday = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 
 # Configuração de pastas
 PASTA_XML = r"C:\XMLCTE"
@@ -57,7 +56,21 @@ def extract_data():
     print(f"Sucesso! Extração concluída. Total de notas encontradas: {len(data)}")
     print(f"Arquivo salvo em: {ARQUIVO_SAIDA}")
 
+# Apagar todos os arquivos da pasta pós extração
+def clear_xml_folder():
+    for ctes in os.listdir(PASTA_XML):
+        file_path = os.path.join(PASTA_XML, ctes)
+
+        try:
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+        except Exception as e:
+            print('Erro ao excluir {ctes}: {e}')
+    
+    print('Arquivos XML removidos com sucesso.')
+
 # Execute script
 if __name__ == "__main__":
     extract_data()
+    clear_xml_folder()
 
