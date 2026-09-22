@@ -3,11 +3,12 @@ import csv
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
-yesterday = (datetime.now() - timedelta(days=21)).strftime("%Y-%m-%d")
+yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
 
 # Configuração de pastas
 PASTA_XML = r"C:\XMLCTE"
 ARQUIVO_SAIDA = fr"C:\Users\felipe.rodrigues\python-portable\extract_keys\keys_extracts_{yesterday}.csv"
+PATH_FOLDER = os.path.dirname(ARQUIVO_SAIDA)
 PATH_NAME = os.path.basename(ARQUIVO_SAIDA).lstrip('keys_extracts_')
 
 # Namespace padrão da SEFAZ para CT-e
@@ -70,7 +71,7 @@ def extract_data():
             writer.writerow(line)
 
     print(f"Sucesso! Extração concluída. Total de notas encontradas: {len(data)}")
-    print(f"Arquivo salvo como em: {PATH_NAME}")
+    print(f"Arquivo salvo como: {PATH_NAME} em {PATH_FOLDER}")
 
     return True
 
